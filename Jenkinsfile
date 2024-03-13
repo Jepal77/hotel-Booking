@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Jepal77/hotel-Booking.git'
+                git url: 'https://github.com/Jepal77/hotel-Booking.git' branch: 'main'
             }
         }
 
