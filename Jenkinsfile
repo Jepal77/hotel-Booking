@@ -10,7 +10,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'C:\\composer\\composer install --working-dir="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\hp"'
+                bat 'C:\\composer\\composer install'
             }
         }
 
