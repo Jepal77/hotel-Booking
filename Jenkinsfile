@@ -8,13 +8,17 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                bat 'C:\\composer\\composer install'
-            }
+      stage('Install Dependencies') {
+    steps {
+        // Navigate to the project directory
+        dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\hp") {
+            // Run Composer install command
+            bat 'C:\\composer\\composer install'
         }
+    }
 
-        stage('Run Tests') {
+
+     stage('Run Tests') {
             steps {
                 bat 'phpunit'
             }
