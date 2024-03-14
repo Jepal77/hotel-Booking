@@ -10,7 +10,7 @@ pipeline {
 
       stage('Install Dependencies') {
             steps {
-                bat 'composer install'
+                bat 'C:\\composer install'
             }
         }
 
