@@ -10,34 +10,26 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                script {
-                    try {
-                        sh 'composer install --no-ansi --no-interaction --no-progress'
-                    } catch (Exception e) {
-                        echo "Failed to install dependencies: ${e.message}"
-                        currentBuild.result = 'FAILURE'
-                        error(e.message)
-                    }
-                }
+                bat 'composer install --no-ansi --no-interaction --no-progress'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'phpunit'
+                bat 'phpunit'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'php index.php'  // Replace 'index.php' with your entry point script
+                bat 'php index.php'  // Replace 'index.php' with your entry point script
             }
         }
 
         stage('Deploy') {
             steps {
                 // Add deployment steps if needed
-                sh 'echo "Deploying..."'
+                echo 'Deploying...'
             }
         }
     }
