@@ -1,0 +1,8 @@
+{
+    "name": "hotel-Booking",
+    "description": "Your project description",
+    "require": {
+        "php": "^7.2",
+        "phpunit/phpunit": "^9.0"
+    }
+}
