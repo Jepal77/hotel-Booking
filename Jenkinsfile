@@ -9,14 +9,11 @@ pipeline {
         }
 
       stage('Install Dependencies') {
-    steps {
-        // Navigate to the project directory
-        dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\hp") {
-            // Run Composer install command
-            bat 'composer install'
+            steps {
+                bat 'composer install --no-ansi --no-interaction --no-progress'
             }
         }
-    }
+
         
      stage('Run Tests') {
             steps {
